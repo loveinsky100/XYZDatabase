@@ -8,9 +8,9 @@
 
 #import "XYZDBTool.h"
 #import <sqlite3.h>
-#import "SynthesizeSingleton.h"
+#import "XYZDBSynthesizeSingleton.h"
 #import "XYZDBModelStructCoding.h"
-#import "Base64.h"
+#import "XYZDBBase64.h"
 
 #define DataBaseCreate                           (@"create table if not exists %@")
 #define DataBaseInsert                           (@"insert into %@ ")
@@ -22,15 +22,15 @@ static sqlite3 *database = nil;
 static sqlite3_stmt *statement = nil;
 
 @interface XYZDBTool()
-- (NSString *)createDBSql:(XYZDBModel *)model variables:(NSArray<DBModel *> *)variableArray;
+- (NSString *)createDBSql:(XYZDBModel *)model variables:(NSArray<XYZPropertyModel *> *)variableArray;
 - (NSString *)findDBSql:(Class)modelClass filter:(NSString *)filterName value:(id)filterValue;
-- (NSString *)updateDBSql:(XYZDBModel *)model variables:(NSArray<DBModel *> *)variableArray;
+- (NSString *)updateDBSql:(XYZDBModel *)model variables:(NSArray<XYZPropertyModel *> *)variableArray;
 - (NSString *)deleteDBSql:(Class)modelClass filter:(NSString *)filterName value:(id)filterValue;
-- (BOOL)openDB:(XYZDBModel *)model variables:(NSArray<DBModel *> *)variableArray;
+- (BOOL)openDB:(XYZDBModel *)model variables:(NSArray<XYZPropertyModel *> *)variableArray;
 @end
 
 @implementation XYZDBTool
-SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
+SYNTHESIZE_SINGLETON_FOR_CLASS_ARC(XYZDBTool)
 - (instancetype)init
 {
     if(self = [super init])
@@ -46,7 +46,8 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
 #pragma mark -publicMethod
 - (BOOL)saveData:(XYZDBModel *)model;
 {
-    NSArray<DBModel *> *variableArray = model.variables;
+//    XYZDBLocker lock();
+    NSArray<XYZPropertyModel *> *variableArray = model.variables;
     if(![self openDB:model variables:variableArray])
     {
         return NO;
@@ -86,7 +87,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
 
 - (BOOL)updateDate:(XYZDBModel *)model
 {
-    NSArray<DBModel *> *variableArray = model.variables;
+    NSArray<XYZPropertyModel *> *variableArray = model.variables;
     NSString *updateSql = [self updateDBSql:model variables: variableArray];
     if(!updateSql || ![updateSql isKindOfClass: [NSString class]])
     {
@@ -169,7 +170,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
                         else
                         {
                             NSString *base64String = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, (int)index)];
-                            value = [Base64 decodeString:base64String];
+                            value = [XYZDBBase64 decodeString:base64String];
                         }
                         
                         if(!value)
@@ -181,7 +182,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
                     }
                     
                     [resultArray addObject: aArray];
-                    [aArray release];
                 }
             }
             else
@@ -211,7 +211,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
                         else
                         {
                             NSString *base64String = [NSString stringWithUTF8String:(char *)sqlite3_column_text(statement, (int)index)];
-                            NSData *data = [Base64 decodeString:base64String];
+                            NSData *data = [XYZDBBase64 decodeString:base64String];
                             
                             objc_property_t property = class_getProperty([aModel class], [[columnName substringWithRange:NSMakeRange(1, columnName.length - 1)] UTF8String]);
                             if(property != NULL)
@@ -243,7 +243,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
                     }
                     
                     [resultArray addObject: aModel];
-                    [aModel release];
                 }
             }
             
@@ -257,7 +256,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
 }
 
 #pragma mark -privateMethod
--(BOOL)openDB:(XYZDBModel *)model variables:(NSArray<DBModel *> *)variableArray{
+-(BOOL)openDB:(XYZDBModel *)model variables:(NSArray<XYZPropertyModel *> *)variableArray{
     NSString *createDBSQL = [self createDBSql: model variables: variableArray];
     if(!createDBSQL || ![createDBSQL isKindOfClass: [NSString class]])
     {
@@ -295,11 +294,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
     return isSuccess;
 }
 
-- (NSString *)updateTableQuery:(NSArray<DBModel *> *)variableArray model:(XYZDBModel *)model
+- (NSString *)updateTableQuery:(NSArray<XYZPropertyModel *> *)variableArray model:(XYZDBModel *)model
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary<NSString *, NSString *> *dic = [NSMutableDictionary dictionaryWithCapacity:variableArray.count];
-    for(DBModel *dbModel in variableArray)
+    for(XYZPropertyModel *dbModel in variableArray)
     {
         [dic setObject:dbModel.type
                 forKey:dbModel.name];
@@ -368,7 +367,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
 }
 
 #pragma mark -otherMethod
-- (NSString *)createDBSql:(XYZDBModel *)model variables:(NSArray<DBModel *> *)variableArray
+- (NSString *)createDBSql:(XYZDBModel *)model variables:(NSArray<XYZPropertyModel *> *)variableArray
 {
     if(!model || !variableArray || ![variableArray isKindOfClass: [NSArray class]] || variableArray.count == 0)
     {
@@ -380,7 +379,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
     NSString *tableName = NSStringFromClass([model class]);
     [createSql appendFormat:DataBaseCreate, tableName];
     NSMutableString *variableSql = [NSMutableString string];
-    for(DBModel *dbModel in variableArray)
+    for(XYZPropertyModel *dbModel in variableArray)
     {
         if(model.modelId &&
            !hasKey &&
@@ -400,7 +399,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
     return createSql;
 }
 
-- (NSString *)saveDBSql:(XYZDBModel *)model variables:(NSArray<DBModel *> *)variableArray
+- (NSString *)saveDBSql:(XYZDBModel *)model variables:(NSArray<XYZPropertyModel *> *)variableArray
 {
     if(!model || !variableArray || ![variableArray isKindOfClass: [NSArray class]] || variableArray.count == 0)
     {
@@ -412,7 +411,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
     [saveSql appendFormat:DataBaseInsert, tableName];
     NSMutableString *variableSql = [NSMutableString string];
     NSMutableString *valueSql = [NSMutableString string];
-    for(DBModel *dbModel in variableArray)
+    for(XYZPropertyModel *dbModel in variableArray)
     {
         if([model respondsToSelector:@selector(modelId)])
         {
@@ -447,7 +446,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
     return saveSql;
 }
 
-- (NSString *)updateDBSql:(XYZDBModel *)model variables:(NSArray<DBModel *> *)variableArray
+- (NSString *)updateDBSql:(XYZDBModel *)model variables:(NSArray<XYZPropertyModel *> *)variableArray
 {
     if(!model || !variableArray || ![variableArray isKindOfClass: [NSArray class]] || variableArray.count == 0)
     {
@@ -458,7 +457,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBTool)
     NSMutableString *updateSql = [NSMutableString string];
     NSMutableString *variableSql = [NSMutableString string];
     NSMutableString *filterSql = [NSMutableString string];
-    for(DBModel *dbModel in variableArray)
+    for(XYZPropertyModel *dbModel in variableArray)
     {
         if([dbModel.name isEqualToString: model.modelId])
         {

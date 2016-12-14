@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DBModel.h"
+#import "XYZPropertyModel.h"
 #import "XYZDBOperation.h"
 
 /**
@@ -57,7 +57,7 @@
 + (void)excuteUpdate:(NSString *)sqlString callBack:(XYZDBOperationCallBack) callback; \
 + (void)excuteQuery:(NSString *)sqlString callBack:(XYZDBOperationCallBack) callback transModel:(BOOL)trans;; \
 \
-- (NSMutableArray<DBModel *> *)variables; \
+- (NSMutableArray<XYZPropertyModel *> *)variables; \
 
 /**
  *  在@implementation中创建，idName必须和@interface中的保持一致

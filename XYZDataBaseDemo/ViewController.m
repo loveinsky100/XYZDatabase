@@ -41,11 +41,13 @@ static dispatch_queue_t xyz_database_test_queue()
         animal.name100 = xyz;
         [animal save];
         
-        XYZAnimal *find = [XYZAnimal find:animal.id];
+        XYZAnimal *find = [XYZAnimal find:animal.id][0];
         NSLog(@"%@", find);
         
         find.name = @"change";
         [find update];
+        
+        NSLog(@"%@", find.variables);
         
         [find delete];
     });

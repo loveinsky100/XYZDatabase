@@ -6,7 +6,7 @@
 //  Copyright © 2016年 Leo. All rights reserved.
 //
 
-#import "DBModel.h"
+#import "XYZPropertyModel.h"
 #import <objc/runtime.h>
 #import "XYZDBModel.h"
 

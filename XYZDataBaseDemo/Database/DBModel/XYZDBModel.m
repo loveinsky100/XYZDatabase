@@ -12,7 +12,7 @@
 #import <objc/runtime.h>
 #import "XYZDBTool.h"
 #import "XYZDBModelStructCoding.h"
-#import "Base64.h"
+#import "XYZDBBase64.h"
 
 @implementation XYZDBModel
 XYZDataBaseId_implementation(id)
@@ -122,7 +122,7 @@ XYZDataBaseId_implementation(id)
 #pragma mark -异步
 - (void)saveCallBack:(XYZDBOperationCallBack)callback
 {
-    XYZDBOperation *operation = [[[XYZDBOperation alloc] init] autorelease];
+    XYZDBOperation *operation = [[XYZDBOperation alloc] init];
     __block __typeof(self) belf = self;
     [operation setOperation:^id(){
         BOOL value = [belf save];
@@ -136,7 +136,7 @@ XYZDataBaseId_implementation(id)
 
 + (void)deleteBy:(NSString *)varName value:(id)varValue callBack:(XYZDBOperationCallBack)callback
 {
-    XYZDBOperation *operation = [[[XYZDBOperation alloc] init] autorelease];
+    XYZDBOperation *operation = [[XYZDBOperation alloc] init];
     __block __typeof(self) belf = self;
     [operation setOperation:^id(){
         BOOL value = [belf deleteBy:varName
@@ -152,7 +152,7 @@ XYZDataBaseId_implementation(id)
 
 - (void)updateCallBack:(XYZDBOperationCallBack)callback
 {
-    XYZDBOperation *operation = [[[XYZDBOperation alloc] init] autorelease];
+    XYZDBOperation *operation = [[XYZDBOperation alloc] init];
     __block __typeof(self) belf = self;
     [operation setOperation:^id(){
         BOOL value = [belf update];
@@ -174,7 +174,7 @@ XYZDataBaseId_implementation(id)
 
 + (void)findBy:(NSString *)varName value:(id)varValue callBack:(XYZDBOperationCallBack)callback
 {
-    XYZDBOperation *operation = [[[XYZDBOperation alloc] init] autorelease];
+    XYZDBOperation *operation = [[XYZDBOperation alloc] init];
     __block __typeof(self) belf = self;
     [operation setOperation:^id(){
         id value = [belf findBy:varName
@@ -197,7 +197,7 @@ XYZDataBaseId_implementation(id)
 
 + (void)excuteQuery:(NSString *)sqlString callBack:(XYZDBOperationCallBack) callback transModel:(BOOL)trans;
 {
-    XYZDBOperation *operation = [[[XYZDBOperation alloc] init] autorelease];
+    XYZDBOperation *operation = [[XYZDBOperation alloc] init];
      __block __typeof(self) belf = self;
     [operation setOperation:^id(){
         id value = [belf excuteQuery: sqlString transModel: trans];
@@ -211,7 +211,7 @@ XYZDataBaseId_implementation(id)
 
 + (void)excuteUpdate:(NSString *)sqlString callBack:(XYZDBOperationCallBack)callback
 {
-    XYZDBOperation *operation = [[[XYZDBOperation alloc] init] autorelease];
+    XYZDBOperation *operation = [[XYZDBOperation alloc] init];
     __block __typeof(self) belf = self;
     [operation setOperation:^id(){
         BOOL value = [belf excuteUpdate: sqlString];
@@ -225,13 +225,13 @@ XYZDataBaseId_implementation(id)
 
 #pragma mark -otherMethod
 
-- (NSMutableArray<DBModel *> *)variables
+- (NSMutableArray<XYZPropertyModel *> *)variables
 {
     Class cls = [self class];
     return [self classVariables: cls];
 }
 
-- (NSMutableArray<DBModel *> *)classVariables:(Class)class
+- (NSMutableArray<XYZPropertyModel *> *)classVariables:(Class)class
 {
     if(class == [NSObject class])
     {
@@ -247,8 +247,8 @@ XYZDataBaseId_implementation(id)
         NSString *key = [NSString stringWithUTF8String:ivar_getName(ivar)];
         const char *type = ivar_getTypeEncoding(ivar);
         
-        NSString *varType = [[[NSString alloc] initWithUTF8String: type] autorelease];
-        DBModel *dbModel = [[DBModel alloc] init];
+        NSString *varType = [[NSString alloc] initWithUTF8String: type];
+        XYZPropertyModel *dbModel = [[XYZPropertyModel alloc] init];
         dbModel.name = key;
         dbModel.type = sqliteType(varType);
         id value = [self valueForKey:key];
@@ -277,13 +277,12 @@ XYZDataBaseId_implementation(id)
                 
             }
             
-            value = [Base64 stringByEncodingData:data];
+            value = [XYZDBBase64 stringByEncodingData:data];
         }
         
-        dbModel.value = value;
+        dbModel.value = [NSString stringWithFormat:@"%@", value];
         
         [arrayFormat addObject:dbModel];
-        [dbModel release];
     }
     
     free(ivars);

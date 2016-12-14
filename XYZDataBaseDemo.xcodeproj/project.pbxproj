@@ -14,17 +14,17 @@
 		B30D2DB41D6D3DC100DB6738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B30D2DB31D6D3DC100DB6738 /* Assets.xcassets */; };
 		B30D2DB71D6D3DC100DB6738 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B30D2DB51D6D3DC100DB6738 /* LaunchScreen.storyboard */; };
 		B30D2DC21D6D3DC100DB6738 /* XYZDataBaseDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DC11D6D3DC100DB6738 /* XYZDataBaseDemoTests.m */; };
-		B30D2DDC1D6D3DD100DB6738 /* DBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DCF1D6D3DD100DB6738 /* DBModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B30D2DDD1D6D3DD100DB6738 /* XYZDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DD11D6D3DD100DB6738 /* XYZDBModel.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B30D2DDE1D6D3DD100DB6738 /* XYZDBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DD41D6D3DD100DB6738 /* XYZDBOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B30D2DDF1D6D3DD100DB6738 /* XYZDBOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DD71D6D3DD100DB6738 /* XYZDBOperationQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		B30D2DE01D6D3DD100DB6738 /* XYZDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DDA1D6D3DD100DB6738 /* XYZDBTool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B30D2DE71D6D3E3400DB6738 /* XYZAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DE61D6D3E3400DB6738 /* XYZAnimal.m */; };
 		B30D2DEA1D6D3E4300DB6738 /* XYZDog.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DE91D6D3E4300DB6738 /* XYZDog.m */; };
 		B30D2DED1D6D3E4A00DB6738 /* XYZCat.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DEC1D6D3E4A00DB6738 /* XYZCat.m */; };
 		B30D2DF01D6D3F2100DB6738 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B30D2DEF1D6D3F2100DB6738 /* libsqlite3.0.tbd */; };
 		B30D2DF31D6D48AB00DB6738 /* XYZProprety.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DF21D6D48AB00DB6738 /* XYZProprety.m */; };
-		B30D2DFE1D6D7CF500DB6738 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = B30D2DFC1D6D7CF500DB6738 /* Base64.m */; };
+		B38FC8F31E00F4FB0027A48B /* XYZDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B38FC8E11E00F4FB0027A48B /* XYZDBModel.m */; };
+		B38FC8F41E00F4FB0027A48B /* XYZPropertyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B38FC8E41E00F4FB0027A48B /* XYZPropertyModel.m */; };
+		B38FC8F51E00F4FB0027A48B /* XYZDBOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B38FC8E71E00F4FB0027A48B /* XYZDBOperation.m */; };
+		B38FC8F61E00F4FB0027A48B /* XYZDBOperationQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B38FC8EA1E00F4FB0027A48B /* XYZDBOperationQueue.m */; };
+		B38FC8F71E00F4FB0027A48B /* XYZDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B38FC8ED1E00F4FB0027A48B /* XYZDBTool.m */; };
+		B38FC8F81E00F4FB0027A48B /* XYZDBBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = B38FC8F01E00F4FB0027A48B /* XYZDBBase64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,30 +51,30 @@
 		B30D2DBD1D6D3DC100DB6738 /* XYZDataBaseDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XYZDataBaseDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B30D2DC11D6D3DC100DB6738 /* XYZDataBaseDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZDataBaseDemoTests.m; sourceTree = "<group>"; };
 		B30D2DC31D6D3DC100DB6738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B30D2DCE1D6D3DD100DB6738 /* DBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBModel.h; sourceTree = "<group>"; };
-		B30D2DCF1D6D3DD100DB6738 /* DBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBModel.m; sourceTree = "<group>"; };
-		B30D2DD01D6D3DD100DB6738 /* XYZDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBModel.h; sourceTree = "<group>"; };
-		B30D2DD11D6D3DD100DB6738 /* XYZDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDBModel.m; sourceTree = "<group>"; };
-		B30D2DD31D6D3DD100DB6738 /* XYZDBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBOperation.h; sourceTree = "<group>"; };
-		B30D2DD41D6D3DD100DB6738 /* XYZDBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDBOperation.m; sourceTree = "<group>"; };
-		B30D2DD61D6D3DD100DB6738 /* XYZDBOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBOperationQueue.h; sourceTree = "<group>"; };
-		B30D2DD71D6D3DD100DB6738 /* XYZDBOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDBOperationQueue.m; sourceTree = "<group>"; };
-		B30D2DD91D6D3DD100DB6738 /* XYZDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBTool.h; sourceTree = "<group>"; };
-		B30D2DDA1D6D3DD100DB6738 /* XYZDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDBTool.m; sourceTree = "<group>"; };
 		B30D2DE51D6D3E3400DB6738 /* XYZAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZAnimal.h; sourceTree = "<group>"; };
 		B30D2DE61D6D3E3400DB6738 /* XYZAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZAnimal.m; sourceTree = "<group>"; };
 		B30D2DE81D6D3E4300DB6738 /* XYZDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDog.h; sourceTree = "<group>"; };
 		B30D2DE91D6D3E4300DB6738 /* XYZDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDog.m; sourceTree = "<group>"; };
 		B30D2DEB1D6D3E4A00DB6738 /* XYZCat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZCat.h; sourceTree = "<group>"; };
 		B30D2DEC1D6D3E4A00DB6738 /* XYZCat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZCat.m; sourceTree = "<group>"; };
-		B30D2DEE1D6D3EC900DB6738 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
 		B30D2DEF1D6D3F2100DB6738 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		B30D2DF11D6D48AB00DB6738 /* XYZProprety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZProprety.h; sourceTree = "<group>"; };
 		B30D2DF21D6D48AB00DB6738 /* XYZProprety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZProprety.m; sourceTree = "<group>"; };
-		B30D2DF41D6D765900DB6738 /* XYZDBModelStructCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBModelStructCoding.h; sourceTree = "<group>"; };
-		B30D2DFB1D6D7CF500DB6738 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		B30D2DFC1D6D7CF500DB6738 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
-		B30D2DFD1D6D7CF500DB6738 /* Base64Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Defines.h; sourceTree = "<group>"; };
+		B38FC8E01E00F4FB0027A48B /* XYZDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBModel.h; sourceTree = "<group>"; };
+		B38FC8E11E00F4FB0027A48B /* XYZDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDBModel.m; sourceTree = "<group>"; };
+		B38FC8E21E00F4FB0027A48B /* XYZDBModelStructCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBModelStructCoding.h; sourceTree = "<group>"; };
+		B38FC8E31E00F4FB0027A48B /* XYZPropertyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZPropertyModel.h; sourceTree = "<group>"; };
+		B38FC8E41E00F4FB0027A48B /* XYZPropertyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZPropertyModel.m; sourceTree = "<group>"; };
+		B38FC8E61E00F4FB0027A48B /* XYZDBOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBOperation.h; sourceTree = "<group>"; };
+		B38FC8E71E00F4FB0027A48B /* XYZDBOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDBOperation.m; sourceTree = "<group>"; };
+		B38FC8E91E00F4FB0027A48B /* XYZDBOperationQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBOperationQueue.h; sourceTree = "<group>"; };
+		B38FC8EA1E00F4FB0027A48B /* XYZDBOperationQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDBOperationQueue.m; sourceTree = "<group>"; };
+		B38FC8EC1E00F4FB0027A48B /* XYZDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBTool.h; sourceTree = "<group>"; };
+		B38FC8ED1E00F4FB0027A48B /* XYZDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDBTool.m; sourceTree = "<group>"; };
+		B38FC8EF1E00F4FB0027A48B /* XYZDBBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBBase64.h; sourceTree = "<group>"; };
+		B38FC8F01E00F4FB0027A48B /* XYZDBBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZDBBase64.m; sourceTree = "<group>"; };
+		B38FC8F11E00F4FB0027A48B /* XYZDBBase64Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBBase64Defines.h; sourceTree = "<group>"; };
+		B38FC8F21E00F4FB0027A48B /* XYZDBSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZDBSynthesizeSingleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +118,8 @@
 		B30D2DA61D6D3DC100DB6738 /* XYZDataBaseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				B38FC8DE1E00F4FB0027A48B /* Database */,
 				B30D2DE41D6D3E0800DB6738 /* Model */,
-				B30D2DCC1D6D3DD100DB6738 /* Database */,
 				B30D2DAA1D6D3DC100DB6738 /* AppDelegate.h */,
 				B30D2DAB1D6D3DC100DB6738 /* AppDelegate.m */,
 				B30D2DAD1D6D3DC100DB6738 /* ViewController.h */,
@@ -150,68 +150,6 @@
 			path = XYZDataBaseDemoTests;
 			sourceTree = "<group>";
 		};
-		B30D2DCC1D6D3DD100DB6738 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				B30D2DCD1D6D3DD100DB6738 /* DBModel */,
-				B30D2DD21D6D3DD100DB6738 /* DBOperation */,
-				B30D2DD51D6D3DD100DB6738 /* DBQueue */,
-				B30D2DD81D6D3DD100DB6738 /* DBTool */,
-				B30D2DDB1D6D3DD100DB6738 /* DBUtility */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		B30D2DCD1D6D3DD100DB6738 /* DBModel */ = {
-			isa = PBXGroup;
-			children = (
-				B30D2DCE1D6D3DD100DB6738 /* DBModel.h */,
-				B30D2DCF1D6D3DD100DB6738 /* DBModel.m */,
-				B30D2DD01D6D3DD100DB6738 /* XYZDBModel.h */,
-				B30D2DD11D6D3DD100DB6738 /* XYZDBModel.m */,
-				B30D2DF41D6D765900DB6738 /* XYZDBModelStructCoding.h */,
-			);
-			path = DBModel;
-			sourceTree = "<group>";
-		};
-		B30D2DD21D6D3DD100DB6738 /* DBOperation */ = {
-			isa = PBXGroup;
-			children = (
-				B30D2DD31D6D3DD100DB6738 /* XYZDBOperation.h */,
-				B30D2DD41D6D3DD100DB6738 /* XYZDBOperation.m */,
-			);
-			path = DBOperation;
-			sourceTree = "<group>";
-		};
-		B30D2DD51D6D3DD100DB6738 /* DBQueue */ = {
-			isa = PBXGroup;
-			children = (
-				B30D2DD61D6D3DD100DB6738 /* XYZDBOperationQueue.h */,
-				B30D2DD71D6D3DD100DB6738 /* XYZDBOperationQueue.m */,
-			);
-			path = DBQueue;
-			sourceTree = "<group>";
-		};
-		B30D2DD81D6D3DD100DB6738 /* DBTool */ = {
-			isa = PBXGroup;
-			children = (
-				B30D2DD91D6D3DD100DB6738 /* XYZDBTool.h */,
-				B30D2DDA1D6D3DD100DB6738 /* XYZDBTool.m */,
-			);
-			path = DBTool;
-			sourceTree = "<group>";
-		};
-		B30D2DDB1D6D3DD100DB6738 /* DBUtility */ = {
-			isa = PBXGroup;
-			children = (
-				B30D2DFB1D6D7CF500DB6738 /* Base64.h */,
-				B30D2DFC1D6D7CF500DB6738 /* Base64.m */,
-				B30D2DFD1D6D7CF500DB6738 /* Base64Defines.h */,
-				B30D2DEE1D6D3EC900DB6738 /* SynthesizeSingleton.h */,
-			);
-			path = DBUtility;
-			sourceTree = "<group>";
-		};
 		B30D2DE41D6D3E0800DB6738 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +163,68 @@
 				B30D2DF21D6D48AB00DB6738 /* XYZProprety.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		B38FC8DE1E00F4FB0027A48B /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B38FC8DF1E00F4FB0027A48B /* DBModel */,
+				B38FC8E51E00F4FB0027A48B /* DBOperation */,
+				B38FC8E81E00F4FB0027A48B /* DBQueue */,
+				B38FC8EB1E00F4FB0027A48B /* DBTool */,
+				B38FC8EE1E00F4FB0027A48B /* DBUtility */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		B38FC8DF1E00F4FB0027A48B /* DBModel */ = {
+			isa = PBXGroup;
+			children = (
+				B38FC8E01E00F4FB0027A48B /* XYZDBModel.h */,
+				B38FC8E11E00F4FB0027A48B /* XYZDBModel.m */,
+				B38FC8E21E00F4FB0027A48B /* XYZDBModelStructCoding.h */,
+				B38FC8E31E00F4FB0027A48B /* XYZPropertyModel.h */,
+				B38FC8E41E00F4FB0027A48B /* XYZPropertyModel.m */,
+			);
+			path = DBModel;
+			sourceTree = "<group>";
+		};
+		B38FC8E51E00F4FB0027A48B /* DBOperation */ = {
+			isa = PBXGroup;
+			children = (
+				B38FC8E61E00F4FB0027A48B /* XYZDBOperation.h */,
+				B38FC8E71E00F4FB0027A48B /* XYZDBOperation.m */,
+			);
+			path = DBOperation;
+			sourceTree = "<group>";
+		};
+		B38FC8E81E00F4FB0027A48B /* DBQueue */ = {
+			isa = PBXGroup;
+			children = (
+				B38FC8E91E00F4FB0027A48B /* XYZDBOperationQueue.h */,
+				B38FC8EA1E00F4FB0027A48B /* XYZDBOperationQueue.m */,
+			);
+			path = DBQueue;
+			sourceTree = "<group>";
+		};
+		B38FC8EB1E00F4FB0027A48B /* DBTool */ = {
+			isa = PBXGroup;
+			children = (
+				B38FC8EC1E00F4FB0027A48B /* XYZDBTool.h */,
+				B38FC8ED1E00F4FB0027A48B /* XYZDBTool.m */,
+			);
+			path = DBTool;
+			sourceTree = "<group>";
+		};
+		B38FC8EE1E00F4FB0027A48B /* DBUtility */ = {
+			isa = PBXGroup;
+			children = (
+				B38FC8EF1E00F4FB0027A48B /* XYZDBBase64.h */,
+				B38FC8F01E00F4FB0027A48B /* XYZDBBase64.m */,
+				B38FC8F11E00F4FB0027A48B /* XYZDBBase64Defines.h */,
+				B38FC8F21E00F4FB0027A48B /* XYZDBSynthesizeSingleton.h */,
+			);
+			path = DBUtility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,19 +327,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B30D2DFE1D6D7CF500DB6738 /* Base64.m in Sources */,
 				B30D2DAF1D6D3DC100DB6738 /* ViewController.m in Sources */,
-				B30D2DDE1D6D3DD100DB6738 /* XYZDBOperation.m in Sources */,
-				B30D2DDF1D6D3DD100DB6738 /* XYZDBOperationQueue.m in Sources */,
+				B38FC8F31E00F4FB0027A48B /* XYZDBModel.m in Sources */,
 				B30D2DED1D6D3E4A00DB6738 /* XYZCat.m in Sources */,
 				B30D2DF31D6D48AB00DB6738 /* XYZProprety.m in Sources */,
 				B30D2DAC1D6D3DC100DB6738 /* AppDelegate.m in Sources */,
-				B30D2DDD1D6D3DD100DB6738 /* XYZDBModel.m in Sources */,
+				B38FC8F61E00F4FB0027A48B /* XYZDBOperationQueue.m in Sources */,
+				B38FC8F81E00F4FB0027A48B /* XYZDBBase64.m in Sources */,
+				B38FC8F51E00F4FB0027A48B /* XYZDBOperation.m in Sources */,
+				B38FC8F41E00F4FB0027A48B /* XYZPropertyModel.m in Sources */,
 				B30D2DE71D6D3E3400DB6738 /* XYZAnimal.m in Sources */,
+				B38FC8F71E00F4FB0027A48B /* XYZDBTool.m in Sources */,
 				B30D2DEA1D6D3E4300DB6738 /* XYZDog.m in Sources */,
-				B30D2DE01D6D3DD100DB6738 /* XYZDBTool.m in Sources */,
 				B30D2DA91D6D3DC100DB6738 /* main.m in Sources */,
-				B30D2DDC1D6D3DD100DB6738 /* DBModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +530,7 @@
 				B30D2DC81D6D3DC100DB6738 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B30D2DC91D6D3DC100DB6738 /* Build configuration list for PBXNativeTarget "XYZDataBaseDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +539,7 @@
 				B30D2DCB1D6D3DC100DB6738 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,14 +9,6 @@
 #import "XYZDBOperation.h"
 
 @implementation XYZDBOperation
-- (void)dealloc
-{
-    self.dbModel = nil;
-    self.operation = nil;
-    self.callBack = nil;
-    [super dealloc];
-}
-
 - (void)main
 {
     if(self.operation)

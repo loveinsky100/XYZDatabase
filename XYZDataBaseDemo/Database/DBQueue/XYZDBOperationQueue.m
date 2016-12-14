@@ -7,7 +7,7 @@
 //
 
 #import "XYZDBOperationQueue.h"
-#import "SynthesizeSingleton.h"
+#import "XYZDBSynthesizeSingleton.h"
 #import "XYZDBOperation.h"
 
 @interface XYZDBOperationQueue()
@@ -15,12 +15,11 @@
 @end
 
 @implementation XYZDBOperationQueue
-SYNTHESIZE_SINGLETON_FOR_CLASS(XYZDBOperationQueue)
+SYNTHESIZE_SINGLETON_FOR_CLASS_ARC(XYZDBOperationQueue)
 
 - (void)dealloc
 {
     self.operationQueue = nil;
-    [super dealloc];
 }
 
 - (instancetype)init
