@@ -6,19 +6,19 @@
 //  Copyright © 2016年 Leo. All rights reserved.
 //
 
-#import "XYZDBModel.h"
 #import "XYZDBModelStructCoding.h"
+#import <UIKit/UIKit.h>
 
 typedef struct _XYZ
 {
     int xyz;
 }XYZ;
 
-@interface XYZAnimal : XYZDBModel<XYZDBModelStructCoding>
+@interface XYZAnimal : NSObject<XYZDBModelStructCoding>
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, assign) NSInteger name1;
 @property (nonatomic, assign) CGFloat name2;
-@property (nonatomic, assign) char name3;
+@property (nonatomic, assign) NSInteger name3;
 @property (nonatomic, assign) XYZ name100;
 
 @property (nonatomic, strong) NSArray *name6;

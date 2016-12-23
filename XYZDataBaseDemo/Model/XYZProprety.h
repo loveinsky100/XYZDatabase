@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Leo. All rights reserved.
 //
 
-#import "XYZDBModel.h"
+#import <Foundation/Foundation.h>
 
-@interface XYZProprety : XYZDBModel
+@interface XYZProprety : NSObject
 @property (nonatomic, copy) NSString *proName;
 @end

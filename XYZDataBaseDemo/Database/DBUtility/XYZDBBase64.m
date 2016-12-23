@@ -553,7 +553,7 @@ FOUNDATION_STATIC_INLINE NSUInteger XYZDBGuessDecodedLength(NSUInteger srcLen) {
 			}
 			break;
 	}
-    NSLog(@"destLen=%lu",(unsigned long)destLen);
+//    NSLog(@"destLen=%lu",(unsigned long)destLen);
 	// return the length
 	return (curDest - destBytes);
 }
