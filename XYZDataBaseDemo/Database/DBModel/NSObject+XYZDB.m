@@ -136,6 +136,14 @@ XYZDataBaseId_implementation(id, Id)
                 }
             }
         }
+        else if([columnType isEqualToString: @"INTEGER"])
+        {
+            value = [NSNumber numberWithInteger:[value integerValue]];
+        }
+        else if([columnType isEqualToString: @"REAL"])
+        {
+            value = [NSNumber numberWithFloat:[value floatValue]];
+        }
         
         objc_property_t property = class_getProperty([self class], [propertyName UTF8String]);
         if(property != NULL && !isStruct)
